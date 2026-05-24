@@ -1,0 +1,39 @@
+services:
+  postgresql:
+    image: postgres:16.2-alpine
+    container_name: kline_okx-postgres
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-kline_okx}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - kline-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-kline_okx}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    shm_size: 256m
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+volumes:
+  pg-data:
+    name: kline_okx-pg-data
+
+networks:
+  kline-net:
+    driver: bridge

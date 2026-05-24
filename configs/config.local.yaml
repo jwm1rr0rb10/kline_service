@@ -1,0 +1,80 @@
+app:
+  id: 1
+  name: trade-service
+  version: 1.0
+  is_dev: true
+  log_level: debug
+  is_log_json: true
+
+grpc:
+  host: 0.0.0.0
+  port: 9994
+  health_check_interval: 10s
+
+http:
+  host: 0.0.0.0
+  port: 8082
+  read_header_timeout: 3s
+
+postgres:
+  host: 127.0.0.1
+  user: postgres
+  password: testtest
+  port: 5432
+  database: trade
+  max_attempt: 3
+  max_delay: 3s
+  binary: false
+
+metrics:
+  host: 0.0.0.0
+  port: 8081
+  read_timeout: 3s
+  write_timeout: 3s
+  read_header_timeout: 3s
+  enabled: true
+
+tracing:
+  enabled: true
+  host: 0.0.0.0
+  port: 4318
+
+okx:
+  intervals:
+    - "1s"
+    - "1m"
+    - "3m"
+    - "5m"
+    - "15m"
+    - "30m"
+    - "1H"
+    - "2H"
+    - "4H"
+    - "6H"
+    - "12H"
+    - "1D"
+    - "3D"
+    - "5D"
+    - "1W"
+    - "1M"
+  symbols:
+    - BTCUSDT
+    - ETHUSDT
+    - SOLUSDT
+    - BNBUSDT
+    - XRPUSDT
+    - DOGEUSDT
+    - ADAUSDT
+    - SHIBUSDT
+    - TONUSDT
+    - AVAXUSDT
+    - TRXUSDT
+    - DOTUSDT
+    - LINKUSDT
+    - MATICUSDT
+    - LTCUSDT
+    - PEPEUSDT
+    - APTUSDT
+    - UNIUSDT
+    - NEARUSDT
+    - SUIUSDT
