@@ -27,6 +27,7 @@ require (
 	github.com/jwm1rr0rb10/go-errors v1.0.1 // indirect
 	github.com/jwm1rr0rb10/go-logging v1.0.0 // indirect
 	github.com/jwm1rr0rb10/go-tracing v1.0.1 // indirect
+	github.com/jwm1rr0rb10/kline_contract/gen/go/kline_service v0.0.0-20260523102809-10c4b75c02b1 // indirect
 	github.com/jwm1rr0rb10/libraries/backend/golang/errors v0.0.0-20260410071327-afb6b5d4f567 // indirect
 	github.com/jwm1rr0rb10/libraries/backend/golang/metrics v0.0.0-20260410071327-afb6b5d4f567 // indirect
 	github.com/jwm1rr0rb10/libraries/backend/golang/postgresql v0.0.0-20260410071327-afb6b5d4f567 // indirect

@@ -53,6 +53,8 @@ github.com/jwm1rr0rb10/go-logging v1.0.0 h1:tcrrfkn/Ei98/XLw0qf8mDGaAfisjAZdyATJ
 github.com/jwm1rr0rb10/go-logging v1.0.0/go.mod h1:z7074BJGIQHbOQUfO4iORB4LoBwBeacjUqp2vDdpg3Q=
 github.com/jwm1rr0rb10/go-tracing v1.0.1 h1:narr3AjcXenptsVCKI3uM8AkIMeXeNMnVAQOqJPUHxQ=
 github.com/jwm1rr0rb10/go-tracing v1.0.1/go.mod h1:meBT80xr+j0l8x7lrK4BYv6ZONtex1agAmltnclrv7w=
+github.com/jwm1rr0rb10/kline_contract/gen/go/kline_service v0.0.0-20260523102809-10c4b75c02b1 h1:yz7f6Y+jBrrRkt142l+/7OuQeBytf+IZcgc00qfo0iw=
+github.com/jwm1rr0rb10/kline_contract/gen/go/kline_service v0.0.0-20260523102809-10c4b75c02b1/go.mod h1:X54DMWfcKXxz3QXx1/8H4H+M5O+KUSIWSzfZWOUN3JA=
 github.com/jwm1rr0rb10/libraries/backend/golang/errors v0.0.0-20260410071327-afb6b5d4f567 h1:UdTwuHdnBKQsxveKNKUr5ObidSfiRYgcoxnAENk9Qo0=
 github.com/jwm1rr0rb10/libraries/backend/golang/errors v0.0.0-20260410071327-afb6b5d4f567/go.mod h1:JYon7Xg6geThlWnCk66GXgutnsu3gTN02gHwtlzbP0U=
 github.com/jwm1rr0rb10/libraries/backend/golang/metrics v0.0.0-20260410071327-afb6b5d4f567 h1:ax3EXOMEAgSaB89xhoSP02nX8jaNHKrG+sxguiwBnj4=

@@ -7,15 +7,16 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-)
 
-const shutdownTimeout = 45 * time.Second
+	"github.com/jwm1rr0rb10/go-logging"
+	"github.com/jwm1rr0rb10/kline_service/app/internal/config"
+	"golang.org/x/sync/errgroup"
+)
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	// Инициализация приложения
 	newApp, err := app.NewApp(ctx)
 	if err != nil {
 		logging.L(ctx).Error("не удалось инициализировать приложение", logging.ErrAttr(err))
@@ -24,12 +25,10 @@ func main() {
 
 	g, gCtx := errgroup.WithContext(ctx)
 
-	// Запускаем основную логику приложения
 	g.Go(func() error {
 		return newApp.Run(gCtx)
 	})
 
-	// Обработка сигналов завершения
 	go func() {
 		sigChan := make(chan os.Signal, 1)
 		signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM, syscall.SIGQUIT)
@@ -39,14 +38,12 @@ func main() {
 
 		cancel()
 
-		// Принудительный выход по таймауту
-		time.AfterFunc(shutdownTimeout, func() {
+		time.AfterFunc(config.ShutdownTimeout, func() {
 			logging.L(gCtx).Error("превышен таймаут graceful shutdown, принудительный выход")
 			os.Exit(130)
 		})
 	}()
 
-	// Ожидаем завершения всех горутин
 	if err := g.Wait(); err != nil && !errors.Is(err, context.Canceled) {
 		logging.L(ctx).Error("приложение завершилось с ошибкой", logging.ErrAttr(err))
 		os.Exit(1)
