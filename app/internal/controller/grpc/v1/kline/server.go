@@ -11,7 +11,7 @@ import (
 // better using gRPC Striming( Sorry for it) I had a little time for this test task, but
 // if we're working with big data and need Search better using strimming than Unary.
 type policy interface {
-	SearchKline(context.Context, *policySpotOKX.SearchKlineRequest) (*policySpotOKX.SearchKlineResponse, error)
+	SearchKline(context.Context, policySpotOKX.SearchKlineRequest) (*policySpotOKX.SearchKlineResponse, error)
 }
 
 type Controller struct {

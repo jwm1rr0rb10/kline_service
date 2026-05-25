@@ -26,6 +26,11 @@ type AppConfig struct {
 	Domain        string `mapstructure:"domain"`
 }
 
+type GRPCConfig struct {
+	Host string `mapstructure:"host" validate:"required"`
+	Port int    `mapstructure:"port" validate:"required,gt=0,lt=65536"`
+}
+
 type HTTPConfig struct {
 	Host              string        `mapstructure:"host"                validate:"required"`
 	Port              int           `mapstructure:"port"                validate:"required,gt=0,lt=65536"`
@@ -72,6 +77,7 @@ type WebSocketConfig struct {
 
 type Config struct {
 	App       AppConfig       `mapstructure:"app"       validate:"required"`
+	GRPC      GRPCConfig      `mapstructure:"grpc"      validate:"required"` // ← добавь
 	HTTP      HTTPConfig      `mapstructure:"http"      validate:"required"`
 	Postgres  PostgresConfig  `mapstructure:"postgres"  validate:"required"`
 	Tracing   TracingConfig   `mapstructure:"tracing"`
