@@ -79,9 +79,9 @@ func NewApp(ctx context.Context) (*App, error) {
 
 	logging.L(ctx).Info("config loaded", "config", cfg)
 
-	if err := initTraceServer(ctx, cfg); err != nil {
-		return nil, errors.Wrap(err, "initTraceServer")
-	}
+	//if err := initTraceServer(ctx, cfg); err != nil {
+	//	return nil, errors.Wrap(err, "initTraceServer")
+	//}
 
 	postgresClient, err := app.initPostgresClient(ctx)
 	if err != nil {

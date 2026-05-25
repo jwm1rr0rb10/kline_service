@@ -73,12 +73,13 @@ func (a *App) initPostgresClient(ctx context.Context) (*psql.Client, error) {
 	).Info("PostgreSQL initializing")
 
 	pgDsn := fmt.Sprintf(
-		"postgres://%s:%s@%s:%d/%s",
+		"postgres://%s:%s@%s:%d/%s?sslmode=%s",
 		a.cfg.Postgres.User,
 		a.cfg.Postgres.Password,
 		a.cfg.Postgres.Host,
 		a.cfg.Postgres.Port,
 		a.cfg.Postgres.Database,
+		sslMode(a.cfg.Postgres.RequireSSL),
 	)
 
 	if a.cfg.Postgres.RequireSSL {
@@ -101,6 +102,13 @@ func (a *App) initPostgresClient(ctx context.Context) (*psql.Client, error) {
 	a.closer.AddNoErr(pgClient)
 
 	return pgClient, nil
+}
+
+func sslMode(requireSSL bool) string {
+	if requireSSL {
+		return "require"
+	}
+	return "disable"
 }
 
 func (a *App) initMetricsServer(ctx context.Context, cfg config.MetricsConfig) (*metrics.Server, error) {
