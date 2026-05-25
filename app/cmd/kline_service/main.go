@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/jwm1rr0rb10/go-logging"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
 	"golang.org/x/sync/errgroup"
 
 	"github.com/jwm1rr0rb10/kline_service/app/internal/app"

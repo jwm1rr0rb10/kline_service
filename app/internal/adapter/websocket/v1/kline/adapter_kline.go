@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jwm1rr0rb10/go-logging"
-	policySpotOKX "github.com/jwm1rr0rb10/kline_service/app/internal/policy/spot_kline_okx"
-
 	"github.com/gorilla/websocket"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
+
+	policySpotOKX "github.com/jwm1rr0rb10/kline_service/app/internal/policy/spot_kline_okx"
 )
 
 func (sws *OkxSpotWebSocket) Connect(ctx context.Context) error {

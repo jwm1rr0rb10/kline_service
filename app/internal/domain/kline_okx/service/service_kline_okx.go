@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/jwm1rr0rb10/go-errors"
-	"github.com/jwm1rr0rb10/go-logging"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/sfqb"
 
 	domainKlineOKX "github.com/jwm1rr0rb10/kline_service/app/internal/domain/kline_okx"

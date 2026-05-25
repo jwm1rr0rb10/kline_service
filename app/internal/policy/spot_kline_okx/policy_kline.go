@@ -5,9 +5,9 @@ import (
 	"time"
 
 	"github.com/jwm1rr0rb10/go-errors"
-	"github.com/jwm1rr0rb10/go-logging"
-	"github.com/jwm1rr0rb10/go-tracing"
 	domainKlineOKXModel "github.com/jwm1rr0rb10/kline_service/app/internal/domain/kline_okx/model"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/tracing"
 	"github.com/shopspring/decimal"
 )
 

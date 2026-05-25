@@ -25,7 +25,7 @@ func (c *Controller) SearchKline(
 		req.WithCount,
 	)
 
-	output, err := c.policy.SearchKline(ctx, request)
+	output, err := c.policy.SearchKline(ctx, *request)
 	if err != nil {
 		return nil, errors.Wrap(err, "c.policy.SearchKline")
 	}

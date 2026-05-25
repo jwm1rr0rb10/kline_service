@@ -10,16 +10,17 @@ require (
 	github.com/gorilla/websocket v1.5.3
 	github.com/jackc/pgx/v5 v5.9.2
 	github.com/jwm1rr0rb10/go-errors v1.0.1
-	github.com/jwm1rr0rb10/go-logging v1.0.0
-	github.com/jwm1rr0rb10/go-metrics v1.0.3
+	github.com/jwm1rr0rb10/go-logging v1.0.1
 	github.com/jwm1rr0rb10/go-pprof v1.0.0
-	github.com/jwm1rr0rb10/go-tracing v1.0.1
 	github.com/jwm1rr0rb10/kline_contract/gen/go/kline_service v0.0.0-20260523102809-10c4b75c02b1
 	github.com/jwm1rr0rb10/libraries/backend/golang/apperror v0.0.0-20260410071327-afb6b5d4f567
 	github.com/jwm1rr0rb10/libraries/backend/golang/core v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/logging v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/metrics v0.0.0-20260525172919-01a01836df4c
 	github.com/jwm1rr0rb10/libraries/backend/golang/postgresql v0.0.0-20260410071327-afb6b5d4f567
-	github.com/jwm1rr0rb10/libraries/backend/golang/queryify v0.0.0-20260410071327-afb6b5d4f567
-	github.com/jwm1rr0rb10/libraries/backend/golang/sfqb v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/queryify v0.0.0-20260525172919-01a01836df4c
+	github.com/jwm1rr0rb10/libraries/backend/golang/sfqb v0.0.0-20260525172919-01a01836df4c
+	github.com/jwm1rr0rb10/libraries/backend/golang/tracing v0.0.0-20260410071327-afb6b5d4f567
 	github.com/pressly/goose/v3 v3.27.1
 	github.com/shopspring/decimal v1.4.0
 	github.com/spf13/viper v1.21.0
@@ -48,12 +49,9 @@ require (
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect
 	github.com/jackc/puddle/v2 v2.2.2 // indirect
-	github.com/jwm1rr0rb10/contracts/gen/go/common v1.0.7 // indirect
+	github.com/jwm1rr0rb10/go-tracing v1.0.1 // indirect
 	github.com/jwm1rr0rb10/kline_contract/gen/go/common v1.0.0 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/errors v0.0.0-20260410071327-afb6b5d4f567 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/logging v0.0.0-20260410071327-afb6b5d4f567 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/metrics v0.0.0-20260410071327-afb6b5d4f567 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/tracing v0.0.0-20260410071327-afb6b5d4f567 // indirect
+	github.com/jwm1rr0rb10/libraries/backend/golang/errors v0.0.0-20260525172919-01a01836df4c // indirect
 	github.com/lann/builder v0.0.0-20180802200727-47ae307949d0 // indirect
 	github.com/lann/ps v0.0.0-20150810152359-62de8c46ede0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect

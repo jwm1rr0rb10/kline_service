@@ -5,13 +5,13 @@ import (
 	"strconv"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/jwm1rr0rb10/go-logging"
-	"github.com/jwm1rr0rb10/go-tracing"
 	"github.com/jwm1rr0rb10/kline_service/app/internal/dal/postgres"
 	"github.com/jwm1rr0rb10/kline_service/app/internal/domain"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
 	psql "github.com/jwm1rr0rb10/libraries/backend/golang/postgresql"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/queryify"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/sfqb"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/tracing"
 
 	domainKlineOKX "github.com/jwm1rr0rb10/kline_service/app/internal/domain/kline_okx"
 	domainKlineOKXModel "github.com/jwm1rr0rb10/kline_service/app/internal/domain/kline_okx/model"

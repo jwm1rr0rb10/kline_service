@@ -8,12 +8,12 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/jwm1rr0rb10/go-errors"
-	"github.com/jwm1rr0rb10/go-logging"
-	"github.com/jwm1rr0rb10/go-metrics"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/core/clock"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/core/closer"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/core/safe/errorgroup"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/core/uuid/google_uuid"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/metrics"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
@@ -32,7 +32,7 @@ import (
 	wsKline "github.com/jwm1rr0rb10/kline_service/app/internal/adapter/websocket/v1/kline"
 )
 
-const cfgPath = "/Users/jwm1rr0rb10/Desktop/kline_service/configs/config.local.yaml"
+const cfgPath = "/Users/jwm1rr0rb/Desktop/kline_service/configs/config.local.yaml"
 
 type Runner interface {
 	Run(context.Context) error

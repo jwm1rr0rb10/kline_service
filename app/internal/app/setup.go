@@ -7,11 +7,11 @@ import (
 	"strconv"
 
 	"github.com/jwm1rr0rb10/go-errors"
-	"github.com/jwm1rr0rb10/go-logging"
-	"github.com/jwm1rr0rb10/go-metrics"
 	"github.com/jwm1rr0rb10/go-pprof"
-	"github.com/jwm1rr0rb10/go-tracing"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/logging"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/metrics"
 	"github.com/jwm1rr0rb10/libraries/backend/golang/postgresql"
+	"github.com/jwm1rr0rb10/libraries/backend/golang/tracing"
 
 	"github.com/jwm1rr0rb10/kline_service/app/internal/config"
 )
