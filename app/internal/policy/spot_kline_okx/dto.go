@@ -23,6 +23,16 @@ type SearchKlineRequest struct {
 	WithCount bool      `json:"with_count"`
 }
 
+func NewSearchKlineRequest(
+	filters sfqb.SFQB,
+	withCount bool,
+) *SearchKlineRequest {
+	return &SearchKlineRequest{
+		Filters:   filters,
+		WithCount: withCount,
+	}
+}
+
 type SearchKlineResponse struct {
 	Items *[]domainKlineOKXModel.Kline `json:"items"`
 	Count *uint64                      `json:"count"`

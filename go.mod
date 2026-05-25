@@ -3,53 +3,73 @@ module github.com/jwm1rr0rb10/kline_service
 go 1.26.2
 
 require (
+	github.com/Masterminds/squirrel v1.5.4
+	github.com/fsnotify/fsnotify v1.10.1
+	github.com/go-chi/chi v1.5.5
+	github.com/go-playground/validator/v10 v10.30.2
+	github.com/gorilla/websocket v1.5.3
+	github.com/jackc/pgx/v5 v5.9.2
+	github.com/jwm1rr0rb10/go-errors v1.0.1
+	github.com/jwm1rr0rb10/go-logging v1.0.0
+	github.com/jwm1rr0rb10/go-metrics v1.0.3
+	github.com/jwm1rr0rb10/go-pprof v1.0.0
+	github.com/jwm1rr0rb10/go-tracing v1.0.1
+	github.com/jwm1rr0rb10/kline_contract/gen/go/kline_service v0.0.0-20260523102809-10c4b75c02b1
+	github.com/jwm1rr0rb10/libraries/backend/golang/apperror v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/core v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/postgresql v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/queryify v0.0.0-20260410071327-afb6b5d4f567
+	github.com/jwm1rr0rb10/libraries/backend/golang/sfqb v0.0.0-20260410071327-afb6b5d4f567
+	github.com/pressly/goose/v3 v3.27.1
+	github.com/shopspring/decimal v1.4.0
+	github.com/spf13/viper v1.21.0
+	golang.org/x/sync v0.20.0
+	google.golang.org/protobuf v1.36.11
+)
+
+require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
-	github.com/fsnotify/fsnotify v1.10.1 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.13 // indirect
+	github.com/getsentry/sentry-go v0.46.2 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-playground/validator/v10 v10.30.2 // indirect
 	github.com/go-viper/mapstructure/v2 v2.5.0 // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.29.0 // indirect
 	github.com/iancoleman/strcase v0.3.0 // indirect
 	github.com/jackc/pgerrcode v0.0.0-20250907135507-afb5586c32a6 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect
-	github.com/jackc/pgx/v5 v5.9.2 // indirect
 	github.com/jackc/puddle/v2 v2.2.2 // indirect
 	github.com/jwm1rr0rb10/contracts/gen/go/common v1.0.7 // indirect
-	github.com/jwm1rr0rb10/go-errors v1.0.1 // indirect
-	github.com/jwm1rr0rb10/go-logging v1.0.0 // indirect
-	github.com/jwm1rr0rb10/go-tracing v1.0.1 // indirect
-	github.com/jwm1rr0rb10/kline_contract/gen/go/kline_service v0.0.0-20260523102809-10c4b75c02b1 // indirect
+	github.com/jwm1rr0rb10/kline_contract/gen/go/common v1.0.0 // indirect
 	github.com/jwm1rr0rb10/libraries/backend/golang/errors v0.0.0-20260410071327-afb6b5d4f567 // indirect
+	github.com/jwm1rr0rb10/libraries/backend/golang/logging v0.0.0-20260410071327-afb6b5d4f567 // indirect
 	github.com/jwm1rr0rb10/libraries/backend/golang/metrics v0.0.0-20260410071327-afb6b5d4f567 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/postgresql v0.0.0-20260410071327-afb6b5d4f567 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/queryify v0.0.0-20260410071327-afb6b5d4f567 // indirect
-	github.com/jwm1rr0rb10/libraries/backend/golang/sfqb v0.0.0-20260410071327-afb6b5d4f567 // indirect
+	github.com/jwm1rr0rb10/libraries/backend/golang/tracing v0.0.0-20260410071327-afb6b5d4f567 // indirect
+	github.com/lann/builder v0.0.0-20180802200727-47ae307949d0 // indirect
+	github.com/lann/ps v0.0.0-20150810152359-62de8c46ede0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mfridman/interpolate v0.0.2 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
+	github.com/oklog/ulid/v2 v2.1.1 // indirect
 	github.com/pelletier/go-toml/v2 v2.3.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/pressly/goose/v3 v3.27.1 // indirect
 	github.com/prometheus/client_golang v1.23.2 // indirect
 	github.com/prometheus/client_model v0.6.2 // indirect
 	github.com/prometheus/common v0.67.5 // indirect
 	github.com/prometheus/procfs v0.20.1 // indirect
 	github.com/sagikazarmark/locafero v0.12.0 // indirect
 	github.com/sethvargo/go-retry v0.3.0 // indirect
-	github.com/sourcegraph/conc v0.3.1-0.20240121214520-5f936abd7ae8 // indirect
 	github.com/spf13/afero v1.15.0 // indirect
 	github.com/spf13/cast v1.10.0 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
-	github.com/spf13/viper v1.21.0 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/timsolov/rest-query-parser v1.9.10 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
@@ -67,11 +87,9 @@ require (
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	golang.org/x/crypto v0.52.0 // indirect
 	golang.org/x/net v0.55.0 // indirect
-	golang.org/x/sync v0.20.0 // indirect
 	golang.org/x/sys v0.45.0 // indirect
 	golang.org/x/text v0.37.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260523011958-0a33c5d7ca68 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260523011958-0a33c5d7ca68 // indirect
 	google.golang.org/grpc v1.81.1 // indirect
-	google.golang.org/protobuf v1.36.11 // indirect
 )

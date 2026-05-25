@@ -14,8 +14,6 @@ import (
 func (p *Policy) Create(ctx context.Context, req CreateKlineRequest) error {
 	logging.L(ctx).Debug("Policy Create Kline Spot")
 
-	typeTrend := req.ClosePrice >= req.OpenPrice
-
 	openTime := time.UnixMilli(req.StartTime)
 	closeTime := time.UnixMilli(req.CloseTime)
 
@@ -44,11 +42,13 @@ func (p *Policy) Create(ctx context.Context, req CreateKlineRequest) error {
 		return errors.Wrap(quoteAssetVolumeErr, "invalid quoteAssetVolume")
 	}
 
+	typeTrend := closePrice.GreaterThanOrEqual(openPrice)
+
 	kline, klineErr := domainKlineOKXModel.NewKlineBuilder().
 		WithTimes(openTime, closeTime).
 		WithPrices(openPrice, closePrice, highPrice, lowPrice).
 		WithVolumes(baseAssetVolume, quoteAssetVolume).
-		WithSymbolInfo(p.BasePolicy.Generate(), req.Symbol, req.Interval).
+		WithSymbolInfo(p.BasePolicy.GenerateID(), req.Symbol, req.Interval).
 		WithTrend(typeTrend).
 		Build()
 

@@ -9,8 +9,10 @@ import (
 	"time"
 
 	"github.com/jwm1rr0rb10/go-logging"
-	"github.com/jwm1rr0rb10/kline_service/app/internal/config"
 	"golang.org/x/sync/errgroup"
+
+	"github.com/jwm1rr0rb10/kline_service/app/internal/app"
+	"github.com/jwm1rr0rb10/kline_service/app/internal/config"
 )
 
 func main() {
@@ -19,7 +21,7 @@ func main() {
 
 	newApp, err := app.NewApp(ctx)
 	if err != nil {
-		logging.L(ctx).Error("не удалось инициализировать приложение", logging.ErrAttr(err))
+		logging.L(ctx).Error("failed to initialize the application", logging.ErrAttr(err))
 		os.Exit(1)
 	}
 
@@ -34,20 +36,20 @@ func main() {
 		signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM, syscall.SIGQUIT)
 
 		<-sigChan
-		logging.L(gCtx).Info("получен сигнал завершения, начинаем graceful shutdown...")
+		logging.L(gCtx).Info("received a termination signal and are initiating a graceful shutdown...")
 
 		cancel()
 
 		time.AfterFunc(config.ShutdownTimeout, func() {
-			logging.L(gCtx).Error("превышен таймаут graceful shutdown, принудительный выход")
+			logging.L(gCtx).Error("graceful shutdown timeout exceeded, forced exit")
 			os.Exit(130)
 		})
 	}()
 
 	if err := g.Wait(); err != nil && !errors.Is(err, context.Canceled) {
-		logging.L(ctx).Error("приложение завершилось с ошибкой", logging.ErrAttr(err))
+		logging.L(ctx).Error("the application terminated with an error", logging.ErrAttr(err))
 		os.Exit(1)
 	}
 
-	logging.L(ctx).Info("приложение успешно остановлено")
+	logging.L(ctx).Info("The application has been stopped successfully.")
 }
