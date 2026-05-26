@@ -160,7 +160,6 @@ func LoadConfig(configPath string) (*Config, error) {
 	return &cfg, nil
 }
 
-// validateConfig проверяет конфигурацию
 func validateConfig(cfg *Config) error {
 	if err := validate.Struct(cfg); err != nil {
 		return fmt.Errorf("validation error: %w", err)
